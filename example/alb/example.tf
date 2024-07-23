@@ -8,7 +8,7 @@ locals {
 }
 
 module "vpc" {
-  source                              = "git::https://github.com/opsstation/terraform-aws-vpc.git?ref=v1.0.0"
+  source                              = "git::https://github.com/yadavprakash/terraform-aws-vpc.git?ref=v1.0.0"
   name                                = "app"
   environment                         = "test"
   cidr_block                          = "10.0.0.0/16"
@@ -20,7 +20,7 @@ module "vpc" {
 }
 
 module "subnet" {
-  source             = "git::https://github.com/opsstation/terraform-aws-subnet.git?ref=v1.0.0"
+  source             = "git::https://github.com/yadavprakash/terraform-aws-subnet.git?ref=v1.0.0"
   name               = local.name
   environment        = local.environment
   availability_zones = ["us-east-1b", "us-east-1c"]
@@ -32,7 +32,7 @@ module "subnet" {
 }
 
 module "iam-role" {
-  source             = "git::https://github.com/opsstation/terraform-aws-iam-role.git?ref=v1.0.0"
+  source             = "git::https://github.com/yadavprakash/terraform-aws-iam-role.git?ref=v1.0.0"
   name               = local.name
   environment        = local.environment
   assume_role_policy = data.aws_iam_policy_document.default.json
@@ -65,7 +65,7 @@ data "aws_iam_policy_document" "iam-policy" {
 }
 
 module "ec2" {
-  source                      = "git::https://github.com/opsstation/terraform-aws-ec2.git?ref=v1.0.0"
+  source                      = "git::https://github.com/yadavprakash/terraform-aws-ec2.git?ref=v1.0.0"
   name                        = "alb"
   environment                 = local.environment
   vpc_id                      = module.vpc.id
@@ -160,3 +160,4 @@ module "alb" {
   ]
 
 }
+

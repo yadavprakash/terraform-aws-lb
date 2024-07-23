@@ -9,7 +9,7 @@ locals {
 
 
 module "vpc" {
-  source                              = "git::https://github.com/opsstation/terraform-aws-vpc.git?ref=v1.0.0"
+  source                              = "git::https://github.com/yadavprakash/terraform-aws-vpc.git?ref=v1.0.0"
   name                                = "app"
   environment                         = "test"
   cidr_block                          = "10.0.0.0/16"
@@ -21,7 +21,7 @@ module "vpc" {
 }
 
 module "public_subnets" {
-  source             = "git::https://github.com/opsstation/terraform-aws-subnet.git?ref=v1.0.0"
+  source             = "git::https://github.com/yadavprakash/terraform-aws-subnet.git?ref=v1.0.0"
   name               = local.name
   environment        = local.environment
   availability_zones = ["us-east-1a", "us-east-1b"]
@@ -34,7 +34,7 @@ module "public_subnets" {
 
 
 module "iam-role" {
-  source             = "git::https://github.com/opsstation/terraform-aws-iam-role.git?ref=v1.0.0"
+  source             = "git::https://github.com/yadavprakash/terraform-aws-iam-role.git?ref=v1.0.0"
   name               = local.name
   environment        = local.environment
   assume_role_policy = data.aws_iam_policy_document.default.json
@@ -68,7 +68,7 @@ data "aws_iam_policy_document" "iam-policy" {
 }
 
 module "ec2" {
-  source                      = "git::https://github.com/opsstation/terraform-aws-ec2.git?ref=v1.0.0"
+  source                      = "git::https://github.com/yadavprakash/terraform-aws-ec2.git?ref=v1.0.0"
   name                        = local.name
   environment                 = local.environment
   vpc_id                      = module.vpc.id
@@ -125,3 +125,4 @@ module "clb" {
   health_check_unhealthy_threshold = 5
   health_check_healthy_threshold   = 5
 }
+
