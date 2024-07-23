@@ -19,7 +19,7 @@ To use this module, you should have Terraform installed and configured for AWS. 
 # Example : alb
 ```hcl
 module "alb" {
-  source                     = "git::https://github.com/opsstation/terraform-aws-lb.git?ref=v1.0.0"
+  source                     = "git::https://github.com/yadavprakash/terraform-aws-lb.git?ref=v1.0.0"
 
   name                       = local.name
   environment = local.environment
@@ -93,7 +93,7 @@ module "alb" {
 # Example : clb
 ```hcl
 module "clb" {
-  source             = "git::https://github.com/opsstation/terraform-aws-lb.git?ref=v1.0.0"
+  source             = "git::https://github.com/yadavprakash/terraform-aws-lb.git?ref=v1.0.0"
 
   name               = "app"
   load_balancer_type = "classic"
@@ -130,7 +130,7 @@ module "clb" {
 # Example : nlb
 ```hcl
 module "nlb" {
-  source                     = "git::https://github.com/opsstation/terraform-aws-lb.git?ref=v1.0.0"
+  source                     = "git::https://github.com/yadavprakash/terraform-aws-lb.git?ref=v1.0.0"
 
   name                       = "app"
   enable                     = true
@@ -186,14 +186,14 @@ module "nlb" {
 
 
 ## Examples
-For detailed examples on how to use this module, please refer to the [examples](https://github.com/opsstation/terraform-aws-lb/tree/master/example) directory within this repository.
+For detailed examples on how to use this module, please refer to the [examples](https://github.com/yadavprakash/terraform-aws-lb/tree/master/example) directory within this repository.
 
 ## License
-This Terraform module is provided under the **MIT** License. Please see the [LICENSE](https://github.com/opsstation/terraform-aws-lb/blob/master/LICENSE) file for more details.
+This Terraform module is provided under the **MIT** License. Please see the [LICENSE](https://github.com/yadavprakash/terraform-aws-lb/blob/master/LICENSE) file for more details.
 
 ## Author
 Your Name
-Replace **MIT** and **opsstation** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
+Replace **MIT** and **yadavprakash** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
 
 
 <!-- BEGIN_TF_DOCS -->
@@ -214,7 +214,7 @@ Replace **MIT** and **opsstation** with the appropriate license and your informa
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | git::https://github.com/opsstation/terraform-aws-labels.git | v1.0.0 |
+| <a name="module_labels"></a> [labels](#module\_labels) | git::https://github.com/yadavprakash/terraform-aws-labels.git | v1.0.0 |
 
 ## Resources
 
@@ -292,11 +292,11 @@ Replace **MIT** and **opsstation** with the appropriate license and your informa
 | <a name="input_load_balancer_delete_timeout"></a> [load\_balancer\_delete\_timeout](#input\_load\_balancer\_delete\_timeout) | Timeout value when deleting the ALB. | `string` | `"10m"` | no |
 | <a name="input_load_balancer_type"></a> [load\_balancer\_type](#input\_load\_balancer\_type) | The type of load balancer to create. Possible values are application or network. The default value is application. | `string` | `""` | no |
 | <a name="input_load_balancer_update_timeout"></a> [load\_balancer\_update\_timeout](#input\_load\_balancer\_update\_timeout) | Timeout value when updating the ALB. | `string` | `"10m"` | no |
-| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'opsstation'. | `string` | `"opsstation"` | no |
+| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'yadavprakash'. | `string` | `"yadavprakash"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
 | <a name="input_preserve_host_header"></a> [preserve\_host\_header](#input\_preserve\_host\_header) | Indicates whether Host header should be preserve and forward to targets without any change. Defaults to false. | `bool` | `false` | no |
 | <a name="input_protocol"></a> [protocol](#input\_protocol) | The protocol. If not icmp, tcp, udp, or all use the. | `string` | `"tcp"` | no |
-| <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo | `string` | `"https://github.com/opsstation/terraform-aws-lb"` | no |
+| <a name="input_repository"></a> [repository](#input\_repository) | Terraform current module repo | `string` | `"https://github.com/yadavprakash/terraform-aws-lb"` | no |
 | <a name="input_sg_description"></a> [sg\_description](#input\_sg\_description) | The security group description. | `string` | `"Instance default security group (only egress access is allowed)."` | no |
 | <a name="input_sg_egress_description"></a> [sg\_egress\_description](#input\_sg\_egress\_description) | Description of the egress and ingress rule | `string` | `"Description of the rule."` | no |
 | <a name="input_sg_egress_ipv6_description"></a> [sg\_egress\_ipv6\_description](#input\_sg\_egress\_ipv6\_description) | Description of the egress\_ipv6 rule | `string` | `"Description of the rule."` | no |
